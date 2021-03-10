@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
           this.loginService.ValidarUsuario(usu).subscribe((res:Usuario)=>{
             sessionStorage.removeItem("token");
             sessionStorage.setItem("token",JSON.stringify(res.token));
-           // this.router.navigate([""]);
+           this.router.navigate(["listarDeudas"]);
             this.isError=false;
           },error=>{
              this.isError=true;
